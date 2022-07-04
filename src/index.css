@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .bg-gray {
+    background-color: rgb(229, 232, 240);
+  }
+  .center {
+    @apply flex flex-wrap items-center justify-center;
+  }
+  .input {
+    @apply rounded-xl border-b-2 border-slate-600/20 bg-white/80 p-3 opacity-70  shadow-md shadow-slate-300/50 outline-none transition-all duration-100 hover:border-sky-300/60 hover:opacity-100 hover:shadow-slate-300/70  focus:border-sky-300/60  md:w-64;
+  }
+  .input-text {
+    @apply text-black lg:my-2 lg:h-[53px] lg:w-72;
+  }
+
+  .shadow-btn {
+    box-shadow: rgb(121 217 235 / 66%) 0px 5px 15px 0px;
+  }
+  .shadow-btn:hover {
+    box-shadow: rgb(121 217 235 / 66%) 0px 0px 0px 0px;
+  }
+  .cart-btn {
+    @apply center h-9 w-9 rounded-md  bg-slate-50/90  shadow-md hover:text-cyan-300 dark:bg-[#272727db] dark:shadow-slate-900 sm:h-8 sm:w-8 md:h-10 md:w-10;
+  }
+  .onClick {
+    @apply cursor-pointer transition-all duration-150;
+  }
+
+  .onClick:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+  }
+  .bg-gradient-info {
+    @apply bg-gradient-to-r from-blue-400/80 to-cyan-300/80;
+  }
+
+  .onClick:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(0.98);
+  }
+  .cart {
+    @apply w-full flex-col gap-2 overflow-hidden rounded-xl bg-white 
+       shadow-md shadow-slate-200 transition-all duration-150 hover:shadow-lg hover:shadow-blue-200/50 dark:bg-[#202124];
+  }
 }

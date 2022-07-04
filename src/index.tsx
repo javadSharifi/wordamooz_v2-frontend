@@ -1,19 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import AppLayouts from "./layouts/AppLayouts";
+import reportWebVitals from "./reportWebVitals";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Toaster } from "react-hot-toast";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import AuthContext from "context/authContext";
+import Starter from "components/Starter";
+import { BrowserRouter } from "react-router-dom";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+Aos.init();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <AuthContext>
+        <BrowserRouter>
+          <Starter>
+            <AppLayouts />
+          </Starter>
+        </BrowserRouter>
+      </AuthContext>
+      <Toaster />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
