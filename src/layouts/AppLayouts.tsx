@@ -9,12 +9,12 @@ import Home from "../pages/home/Home";
 import { authContext } from "context/authContext";
 
 function AppLayouts() {
-  const [loading] = useContext(authContext);
-
+  const [auth] = useContext(authContext);
+console.log(auth.loading);
   const routes = useRoutes([
     {
       path: "/auth",
-      element: loading ? <Navigate to="/" /> : <Auth />,
+      element: auth.loading ? <Navigate to="/" /> : <Auth />,
       children: [
         { index: true, element: <Login /> },
         { path: "login", element: <Login /> },
@@ -23,7 +23,7 @@ function AppLayouts() {
     },
     {
       path: "/",
-      element: loading ? <Home /> : <Navigate to="/auth" />,
+      element: auth.loading ? <Home /> : <Navigate to="/auth" />,
       children: [
         { path: "/", index: true, element: <Category /> },
         { path: ":idCategories", element: <Post /> },

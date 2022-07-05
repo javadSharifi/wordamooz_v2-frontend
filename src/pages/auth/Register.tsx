@@ -14,7 +14,7 @@ type TData = {
 };
 
 function Register() {
-      const [, setLoading] = useContext(authContext);
+  const [auth, setAuth] = useContext(authContext);
   const { mutate } = useRegister();
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -36,7 +36,7 @@ function Register() {
           {
             onSuccess() {
               toast.success("register is success");
-              setLoading(true); 
+              setAuth({ ...auth, loading: false });
             },
             onError(e: any) {
               console.log(setErrors(e.response.data.errors));
@@ -56,8 +56,18 @@ function Register() {
         <Form>
           <Title />
           <Input name="name" className=" input-text" type="name" value="name" />
-          <Input name="email"className=" input-text"type="email"value="email"/>
-          <Input name="password" className=" input-text" type="password" value="password"/>
+          <Input
+            name="email"
+            className=" input-text"
+            type="email"
+            value="email"
+          />
+          <Input
+            name="password"
+            className=" input-text"
+            type="password"
+            value="password"
+          />
           <Button>Register</Button>
         </Form>
       )}

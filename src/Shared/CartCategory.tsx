@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CartCategory({ img, text }: { img: string, text: string}) {
+function CartCategory({ img, text }: { img: number, text: string}) {
   return (
     <div
       data-aos="fade-up"

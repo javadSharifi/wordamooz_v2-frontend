@@ -13,6 +13,12 @@ export interface IAuthUser {
   image?: any;
 }
 
+export interface IUser {
+  loading: boolean | null;
+  id: number | null;
+  email: string | null;
+}
+
 export interface ICategory extends IModel {
   name: string;
   user_id: number;

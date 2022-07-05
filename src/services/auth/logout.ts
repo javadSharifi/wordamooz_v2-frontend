@@ -10,11 +10,11 @@ const logout = async () => {
 };
 
 const useLogout = () => {
-    const [, setLoading] = useContext(authContext);
+    const [auth, setAuth] = useContext(authContext);
 
     return useMutation(logout, {
         onSuccess: () => {
-            setLoading(false);
+            setAuth({...auth, loading: false});
         }
     });
 };

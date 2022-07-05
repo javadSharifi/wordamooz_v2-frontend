@@ -9,9 +9,9 @@ type StarterProps = {
 
 function Starter({ children }: StarterProps) {
   useMe();
-  const [loading] = useContext(authContext);
+  const [auth] = useContext(authContext);
 
-  return loading === null ? <Loading/> : children;
+  return auth.loading === null ? <Loading /> : children;
 }
 
 export default Starter;

@@ -14,7 +14,7 @@ type TData = {
 
 function Login() {
   const { mutate } = useLogin();
-  const [, setLoading] = useContext(authContext);
+    const [auth, setAuth] = useContext(authContext);
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email address")
@@ -32,7 +32,7 @@ function Login() {
         mutate(values, {
           onSuccess: (res) => {
             toast.success("Login Success");
-            setLoading(true);
+            setAuth({ ...auth, loading: true });
           },
           onError: (e: any) => {
             setErrors(e.response.data.errors);
