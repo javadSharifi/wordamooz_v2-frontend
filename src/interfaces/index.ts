@@ -72,5 +72,5 @@ export interface ICartPost {
   body: string;
   word: string;
   meaning: string;
-  categoryId:string
+  categoryId:number
 }

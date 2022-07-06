@@ -12,6 +12,11 @@ function AuthContext({ children }: { children: React.ReactNode }) {
     email: null,
   });
 
+// setAuth((prevState) => ({ ...prevState, loading: true }));
+
+
+
+
   return (
     <authContext.Provider value={[auth, setAuth]}>
       {children}

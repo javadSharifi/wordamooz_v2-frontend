@@ -4,9 +4,14 @@ import { Form } from "components/auth/form";
 import FieldInput from "Shared/Input";
 import ButtonInfo from "Shared/ButtonInfo";
 import { useRef } from "react";
+import useCategories from "services/categories/newCategories";
+import toast from "react-hot-toast";
+import { useQueryClient } from "react-query";
 
 function Create() {
   const closModal = useRef<any>();
+  const {mutate} = useCategories()
+  const queryClient = useQueryClient();
 
   const validationSchema = Yup.object().shape({
     category: Yup.string().required("category is required"),
@@ -15,9 +20,22 @@ function Create() {
   return (
     <Formik
       validationSchema={validationSchema}
-      onSubmit={async (values, actions) => {
-        closModal.current.click();
-        actions.resetForm();
+      onSubmit={async ({category}, actions) => {
+        mutate({ name: category, is_public: false }, {
+          onSuccess() {
+            toast.success("create is success");
+            actions.resetForm();
+            closModal.current.click();
+            queryClient.invalidateQueries(["privateCategories"]);
+          },
+          onError(e: any) {
+            console.log(actions.setErrors(e.response.data.errors));
+
+          }
+
+       })
+       
+       
       }}
       initialValues={{
         category: "",

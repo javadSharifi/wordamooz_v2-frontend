@@ -10,7 +10,7 @@ import { authContext } from "context/authContext";
 
 function AppLayouts() {
   const [auth] = useContext(authContext);
-console.log(auth.loading);
+
   const routes = useRoutes([
     {
       path: "/auth",
@@ -26,7 +26,7 @@ console.log(auth.loading);
       element: auth.loading ? <Home /> : <Navigate to="/auth" />,
       children: [
         { path: "/", index: true, element: <Category /> },
-        { path: ":idCategories", element: <Post /> },
+        { path: "/Categories/:idCategories", element: <Post /> },
       ],
     },
   ]);

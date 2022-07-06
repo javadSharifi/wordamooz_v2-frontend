@@ -11,9 +11,9 @@ function Category() {
 
   const result = isLoading ? (
     <div>Loading...</div>
-  )  : (
+  ) : (
     data?.data.data.map(({ id, name }) => (
-      <Link key={id} to={`/post/${name}`}>
+      <Link key={id} to={`/Categories/${id}`}>
         <CartCategory img={id} text={name} />
       </Link>
     ))

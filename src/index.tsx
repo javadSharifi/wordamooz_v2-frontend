@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import AppLayouts from "./layouts/AppLayouts";
 import reportWebVitals from "./reportWebVitals";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Toaster } from "react-hot-toast";
 import Aos from "aos";
@@ -36,6 +37,7 @@ root.render(
         </BrowserRouter>
       </AuthContext>
       <Toaster />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </React.StrictMode>
 );

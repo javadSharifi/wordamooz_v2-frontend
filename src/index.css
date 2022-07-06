@@ -42,7 +42,8 @@
     transform: scale(0.98);
   }
   .cart {
-    @apply w-full flex-col gap-2 overflow-hidden rounded-xl bg-white 
-       shadow-md shadow-slate-200 transition-all duration-150 hover:shadow-lg hover:shadow-blue-200/50 dark:bg-[#202124];
+    @apply w-full flex-col gap-2 overflow-y-scroll rounded-xl bg-white 
+       shadow-md shadow-slate-200 transition-all duration-150 hover:shadow-lg
+        hover:shadow-blue-200/50 dark:bg-[#202124];
   }
 }

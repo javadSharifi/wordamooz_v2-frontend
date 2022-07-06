@@ -18,8 +18,9 @@ const useMe = () => {
     onSuccess: ({data}) => {
       setAuth({ loading:true, id:data.data.id, email:data.data.email, name:data.data.name, image:data.data.image });
     },
-    onError: () => {
-      setAuth({...auth ,loading:false });
+    onError: (res:any) => {
+      setAuth({ ...auth, loading: false });
+      console.log(res.code);
     },
   });
 };
