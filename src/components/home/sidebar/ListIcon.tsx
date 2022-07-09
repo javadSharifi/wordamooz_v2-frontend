@@ -1,23 +1,44 @@
 import React from "react";
-import { Iicon, IListIcon } from "interfaces";
+import { IIcon, IListIcon } from "interfaces";
 import ButtonSidebar from "./ButtonSidebar";
-import { LogoutIcon } from "@heroicons/react/outline";
+import { CogIcon, HeartIcon, HomeIcon, LogoutIcon } from "@heroicons/react/outline";
 import useLogout from "services/auth/logout";
+import {  useNavigate } from "react-router-dom";
 
-function ListIcon({ list }: IListIcon<Iicon[]>) {
-  const {mutate:logout} = useLogout();
-  const listItems = list.map(({ delay, name, Icon }) => (
-    <ButtonSidebar Icon={Icon} delay={delay} key={name}>
-      {name}
-    </ButtonSidebar>
-  ));
+function ListIcon({ list }: IListIcon<IIcon[]>) {
+  const { mutate: logout } = useLogout();
+  const navigate= useNavigate()
+
+
 
   return (
     <div className="mt-14 flex  w-full flex-col items-center gap-3 ">
-      {listItems}
-      <ButtonSidebar onClick={() => logout()} Icon={LogoutIcon} delay="1100">
-        Logout
-      </ButtonSidebar>
+      <ButtonSidebar
+        Icon={HomeIcon}
+        delay="400"
+        onClick={() => navigate("/")}
+        name={"home"}
+      />
+      <ButtonSidebar
+        Icon={HeartIcon}
+        delay="550"
+        onClick={() => navigate("/Heart")}
+        name={"Heart"}
+      />
+
+      <ButtonSidebar
+        name="Settings"
+        onClick={() => navigate("/Settings")}
+        Icon={CogIcon}
+        delay="700"
+      />
+
+      <ButtonSidebar
+        name="Logout"
+        onClick={() => logout()}
+        Icon={LogoutIcon}
+        delay="850"
+      />
     </div>
   );
 }

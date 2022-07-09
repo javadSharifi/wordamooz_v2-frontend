@@ -1,8 +1,8 @@
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Form } from "components/auth/form";
-import FieldInput from "Shared/Input";
-import ButtonInfo from "Shared/ButtonInfo";
+import FieldInput from "shared/Input";
+import ButtonInfo from "shared/ButtonInfo";
 import { useRef } from "react";
 import useCategories from "services/categories/newCategories";
 import toast from "react-hot-toast";
@@ -10,7 +10,7 @@ import { useQueryClient } from "react-query";
 
 function Create() {
   const closModal = useRef<any>();
-  const {mutate} = useCategories()
+  const { mutate } = useCategories();
   const queryClient = useQueryClient();
 
   const validationSchema = Yup.object().shape({
@@ -20,22 +20,21 @@ function Create() {
   return (
     <Formik
       validationSchema={validationSchema}
-      onSubmit={async ({category}, actions) => {
-        mutate({ name: category, is_public: false }, {
-          onSuccess() {
-            toast.success("create is success");
-            actions.resetForm();
-            closModal.current.click();
-            queryClient.invalidateQueries(["privateCategories"]);
-          },
-          onError(e: any) {
-            console.log(actions.setErrors(e.response.data.errors));
-
+      onSubmit={async ({ category }, actions) => {
+        mutate(
+          { name: category, is_public: false },
+          {
+            onSuccess() {
+              toast.success("create is success");
+              actions.resetForm();
+              closModal.current.click();
+              queryClient.invalidateQueries(["privateCategories"]);
+            },
+            onError(e: any) {
+              console.log(actions.setErrors(e.response.data.errors));
+            },
           }
-
-       })
-       
-       
+        );
       }}
       initialValues={{
         category: "",
@@ -43,11 +42,11 @@ function Create() {
     >
       {() => (
         <div className="flex w-full justify-center">
-          <Form>
+          <Form className="flex flex-col items-center gap-3">
             <label className="hidden" ref={closModal} htmlFor="Category" />
             <FieldInput
               name="category"
-              className="input-text"
+              className="w-80 "
               type="input"
               value="category"
             />

@@ -1,4 +1,4 @@
-import { authContext } from "context/authContext";
+import { authContext } from "context/AuthContext";
 import { Formik } from "formik";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";

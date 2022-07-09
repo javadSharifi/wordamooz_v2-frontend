@@ -13,7 +13,7 @@
     @apply rounded-xl border-b-2 border-slate-600/20 bg-white/80 p-3 opacity-70  shadow-md shadow-slate-300/50 outline-none transition-all duration-100 hover:border-sky-300/60 hover:opacity-100 hover:shadow-slate-300/70  focus:border-sky-300/60  md:w-64;
   }
   .input-text {
-    @apply text-black lg:my-2 lg:h-[53px] lg:w-72;
+    @apply text-black   lg:h-[53px] ;
   }
 
   .shadow-btn {
@@ -42,7 +42,7 @@
     transform: scale(0.98);
   }
   .cart {
-    @apply w-full flex-col gap-2 overflow-y-scroll rounded-xl bg-white 
+    @apply w-full flex-col gap-2 overflow-hidden relative  rounded-xl bg-white 
        shadow-md shadow-slate-200 transition-all duration-150 hover:shadow-lg
         hover:shadow-blue-200/50 dark:bg-[#202124];
   }

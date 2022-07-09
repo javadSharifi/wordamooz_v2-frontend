@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import Logo from "assets/svg/logoBig.svg";
 import DarkLogo from "assets/svg/darkLogo.svg";
-import { HeartIcon, CogIcon, ViewGridIcon } from "@heroicons/react/outline";
+import { HeartIcon, CogIcon, ViewGridIcon, HomeIcon } from "@heroicons/react/outline";
+import { Navigator } from "react-router-dom";
 
 export const logo = {
   Lite: Logo,
@@ -10,9 +11,9 @@ export const logo = {
 
 export const listIcon = [
   {
-    name: "Apps",
+    name: "Home",
     delay: "650",
-    Icon: ViewGridIcon,
+    Icon: HomeIcon,
   },
   {
     name: "Heart",

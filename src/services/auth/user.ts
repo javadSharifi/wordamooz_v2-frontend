@@ -1,5 +1,5 @@
 
-import { authContext } from 'context/authContext';
+import { authContext } from 'context/AuthContext';
 import { IAuthUser, IResource, IUser } from 'interfaces';
 import axios from 'libs/axios';
 import { useContext } from 'react';
@@ -12,15 +12,17 @@ const user = async () => {
 };
 
 const useMe = () => {
-     const [auth, setAuth] = useContext(authContext);
+
+  const [auth, setAuth] = useContext(authContext);
 
   return useQuery('user', user, {
     onSuccess: ({data}) => {
-      setAuth({ loading:true, id:data.data.id, email:data.data.email, name:data.data.name, image:data.data.image });
+      setAuth({ loading: true, id: data.data.id, email: data.data.email, name: data.data.name, image: data.data.image });
+
     },
-    onError: (res:any) => {
+    onError: (res: any) => {
+
       setAuth({ ...auth, loading: false });
-      console.log(res.code);
     },
   });
 };

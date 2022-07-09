@@ -16,7 +16,7 @@ function ModalCreate({ children }: ModalCreateProps) {
   return (
     <label
       htmlFor=""
-      className="flex min-h-[25rem] w-[25rem] flex-col items-center gap-7 rounded-2xl bg-slate-50 p-3"
+      className="flex min-h-[25rem] w-[25rem] flex-col items-center gap-3 rounded-2xl bg-slate-50 p-3"
     >
       <div
         onClick={() => setId(generateRandomNumber())}

@@ -2,7 +2,7 @@ import Modal from "components/Modal";
 import React from "react";
 import { Link } from "react-router-dom";
 import usePrivateCategories from "services/categories/privateCategories";
-import CartCategory from "../../../Shared/CartCategory";
+import CartCategory from "./Cart";
 import ModalCreate from "../ModalCreate";
 import Create from "./Create";
 
@@ -13,9 +13,7 @@ function Category() {
     <div>Loading...</div>
   ) : (
     data?.data.data.map(({ id, name }) => (
-      <Link key={id} to={`/Categories/${id}`}>
-        <CartCategory img={id} text={name} />
-      </Link>
+      <CartCategory key={id} id={id} text={name} />
     ))
   );
 
@@ -26,7 +24,10 @@ function Category() {
           <Create />
         </ModalCreate>
       </Modal>
+    
+
       {result}
+      
     </>
   );
 }

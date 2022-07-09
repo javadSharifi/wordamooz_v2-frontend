@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Toaster } from "react-hot-toast";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import AuthContext from "context/authContext";
+import AuthContext from "context/AuthContext";
 import Starter from "components/Starter";
 import { BrowserRouter } from "react-router-dom";
 

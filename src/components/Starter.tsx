@@ -1,4 +1,4 @@
-import { authContext } from "context/authContext";
+import { authContext } from "context/AuthContext";
 import React, { useContext } from "react";
 import useMe from "services/auth/user";
 import Loading from "./Loading";
@@ -10,7 +10,6 @@ type StarterProps = {
 function Starter({ children }: StarterProps) {
   useMe();
   const [auth] = useContext(authContext);
-
   return auth.loading === null ? <Loading /> : children;
 }
 

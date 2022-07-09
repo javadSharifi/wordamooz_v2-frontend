@@ -6,25 +6,28 @@ function FieldInput({
   type,
   className,
   name,
-  as
+  as,
 }: {
   value: string;
   type: string;
   className: string;
-    name: string;
-  as?:string
+  name: string;
+  as?: string;
 }) {
   return (
-    <>
+    <div className={`form-control ${className} `}>
+      <label className="label">
+        <span className="label-text font-bold">{name}</span>
+      </label>
       <Field
         as={as}
         type={type}
         placeholder={value}
         name={name}
-        className={` input border-2  border-gray-400/20 ${className} `}
+        className={` input input-bordered w-full  h-14  `}
       />
       <ErrorMessage name={name} component="p" className="text-red-600" />
-    </>
+    </div>
   );
 }
 

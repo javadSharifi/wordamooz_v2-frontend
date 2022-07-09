@@ -1,20 +1,19 @@
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Form } from "components/auth/form";
-import FieldInput from "Shared/Input";
-import ButtonInfo from "Shared/ButtonInfo";
+import FieldInput from "shared/Input";
+import ButtonInfo from "shared/ButtonInfo";
 import { useRef } from "react";
 import useNewPost from "services/posts/newPost";
 import toast from "react-hot-toast";
 import { useQueryClient } from "react-query";
 
-function Create({ id }: { id: string | undefined }) {
+function CreatePost({ id }: { id: string | undefined }) {
   const queryClient = useQueryClient();
   const { mutate } = useNewPost();
   const closModal = useRef<any>();
   const validationSchema = Yup.object().shape({
     word: Yup.string().required("word is required"),
-    body: Yup.string().required("word body is required"),
     meaning: Yup.string().required("word meaning is required"),
   });
 
@@ -22,8 +21,7 @@ function Create({ id }: { id: string | undefined }) {
     <Formik
       validationSchema={validationSchema}
       onSubmit={async ({ body, word, meaning }, actions) => {
-        console.log(body, word, meaning);
-        mutate(
+         mutate(
           { body, category_id: id, meaning, word },
           {
             onSuccess() {
@@ -48,17 +46,17 @@ function Create({ id }: { id: string | undefined }) {
     >
       {() => (
         <div className="flex w-full justify-center">
-          <Form>
+          <Form className="flex flex-wrap justify-center  ">
             <label className="hidden" ref={closModal} htmlFor="Post" />
             <FieldInput
               name="word"
-              className="input-text"
+              className=" w-[47%]  "
               type="string"
               value="word en"
             />
             <FieldInput
               name="meaning"
-              className="input-text"
+              className=" w-[47%] "
               type="string"
               value="word fa"
             />
@@ -67,7 +65,7 @@ function Create({ id }: { id: string | undefined }) {
               name="body"
               type="textarea"
               value="body"
-              className="  max-h-28  min-h-[4rem]    lg:my-2  lg:w-72  "
+              className="  max-h-28    w-9/12 "
             />
             <ButtonInfo className="px-16"> send</ButtonInfo>
           </Form>
@@ -77,4 +75,4 @@ function Create({ id }: { id: string | undefined }) {
   );
 }
 
-export default Create;
+export default CreatePost;

@@ -6,10 +6,11 @@ import { Navigate, useRoutes } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import Home from "../pages/home/Home";
-import { authContext } from "context/authContext";
+import { authContext } from "context/AuthContext";
 
 function AppLayouts() {
   const [auth] = useContext(authContext);
+
 
   const routes = useRoutes([
     {

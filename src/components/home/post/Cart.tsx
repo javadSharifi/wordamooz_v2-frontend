@@ -1,23 +1,26 @@
+import Dropdown from "shared/dropdown/Dropdown";
 import { ICartPost } from "interfaces";
-import React from "react";
 import CartBtn from "./Btn";
-
-// import CartBtn from "./CartBtn";
-
+import Action from "./Action";
 
 
-function CartPost({ id, body, word, meaning, categoryId }: ICartPost) {
+
+function CartPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
+
+
   return (
     <div
-      // data-aos="zoom-in-up"
+      data-aos="zoom-in-up"
       className="  cart group h-fit  "
     >
       <img
-        className="relative rounded-3xl aspect-square h-52   w-full  object-cover object-center  p-2  "
+        className=" relative aspect-square h-52 w-full rounded-3xl  object-cover  object-center p-2    "
         loading="lazy"
-        src={`https://picsum.photos/id/${id}/534/200`}
+        src={`https://picsum.photos/id/${postId}/534/200`}
         alt="avatar"
       />
+
+      <Action categoryId={categoryId} postId={postId} />
 
       <CartBtn value={word} />
 

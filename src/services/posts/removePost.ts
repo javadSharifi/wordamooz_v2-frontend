@@ -2,13 +2,13 @@ import { useMutation } from 'react-query';
 import axios from 'libs/axios';
 
 interface IPostRemove {
-  category_id: string;
-  postId: string;
+  categoryId: string|number;
+  postId: string|number;
 }
 
 async function removePost(data: IPostRemove) {
   const Result = await axios.delete(
-    `api/categories/${data.category_id}/posts/${data.postId}`
+    `api/categories/${data.categoryId}/posts/${data.postId}`
   );
   return Result;
 }

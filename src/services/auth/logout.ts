@@ -1,5 +1,5 @@
 
-import { authContext } from "context/authContext";
+import { authContext } from "context/AuthContext";
 import axios from "libs/axios";
 import { useContext } from "react";
 import { useMutation } from "react-query";
@@ -11,10 +11,9 @@ const logout = async () => {
 
 const useLogout = () => {
     const [auth, setAuth] = useContext(authContext);
-
     return useMutation(logout, {
         onSuccess: () => {
-            setAuth({...auth, loading: false});
+            setAuth({ loading: false ,id:null ,email:null, name:null, image:null });
         }
     });
 };

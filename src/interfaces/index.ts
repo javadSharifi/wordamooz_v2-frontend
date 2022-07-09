@@ -53,24 +53,31 @@ export interface IData<Type> {
   meta: IMeta;
 }
 
-export interface IListIcon<Type> {
-  list: Type;
-}
-
 export type IChildren = {
   children?: React.ReactNode;
 };
 
-export interface Iicon {
-  name: string;
-  delay: string;
-  Icon: any;
-}
 
 export interface ICartPost {
   id: number;
   body: string;
   word: string;
   meaning: string;
-  categoryId:number
+  categoryId: number;
+}
+export interface IIcon {
+  name: string;
+  delay: string;
+  Icon: any;
+  path?: any;
+}
+
+export interface IListIcon<type> {
+  list: type;
+}
+ export interface IButtonSidebar {
+  Icon?: any;
+  name?: string;
+  delay?: string;
+  onClick?: any;
 }

@@ -5,7 +5,8 @@ import * as Yup from "yup";
 import { Button, Form, Input } from "../../components/auth/form";
 import Title from "components/auth/Title";
 import useLogin from "services/auth/login";
-import { authContext } from "context/authContext";
+import { authContext } from "context/AuthContext";
+import useMe from "services/auth/user";
 
 type TData = {
   email: string;
@@ -30,9 +31,9 @@ function Login() {
       validationSchema={validationSchema}
       onSubmit={async (values, { setErrors }) => {
         mutate(values, {
-          onSuccess: (res) => {
+          onSuccess: ({data}) => {
             toast.success("Login Success");
-            setAuth({ ...auth, loading: true });
+            setAuth({ ...auth, loading: true , id: data.data.id});
           },
           onError: (e: any) => {
             setErrors(e.response.data.errors);
@@ -47,21 +48,21 @@ function Login() {
       }
     >
       {() => (
-        <Form>
+        <Form className="flex flex-col justify-center items-center">
           <Title />
           <Input
             name="email"
-            className=" input-text"
             type="email"
             value="email"
+            className="w-80"
           />
           <Input
             name="password"
-            className=" input-text"
+            className=" w-80"
             type="password"
             value="password"
           />
-          <Button>Login</Button>
+          <Button className="px-24 lg:mt-10">Login</Button>
         </Form>
       )}
     </Formik>

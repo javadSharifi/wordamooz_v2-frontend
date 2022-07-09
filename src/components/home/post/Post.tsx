@@ -2,9 +2,9 @@ import Modal from 'components/Modal';
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import usePrivatePots from 'services/posts/privatePost';
-import CartPost from 'Shared/post/Cart';
+import CartPost from './Cart';
 import ModalCreate from '../ModalCreate';
-import Create from './Create';
+import CreatePost from "./Create";
 
 function Post() {
   const { data, isLoading } = usePrivatePots();
@@ -25,7 +25,7 @@ function Post() {
     <>
       <Modal name="Post">
         <ModalCreate>
-          <Create id={id} />
+          <CreatePost id={id} />
         </ModalCreate>
       </Modal>
       {result}

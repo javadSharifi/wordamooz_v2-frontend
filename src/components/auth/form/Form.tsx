@@ -1,14 +1,14 @@
 import React from "react";
 import { Form as FormikForm } from "formik";
-import { IChildren } from "interfaces";
-
-
-
-const Form = ({ children }: IChildren) => {
+const Form = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <FormikForm className=" flex h-full w-full   flex-col items-center  gap-4">
-      {children}
-    </FormikForm>
+    <FormikForm className={`   h-full w-full    gap-x-2 ${className} `}>{children}</FormikForm>
   );
 };
 
