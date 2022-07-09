@@ -25,7 +25,7 @@ function Category() {
         </ModalCreate>
       </Modal>
     
-
+      
       {result}
       
     </>

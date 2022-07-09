@@ -65,7 +65,7 @@ function CreatePost({ id }: { id: string | undefined }) {
               name="body"
               type="textarea"
               value="body"
-              className="  max-h-28    w-9/12 "
+              className="  max-h-28  mb-3 w-full "
             />
             <ButtonInfo className="px-16"> send</ButtonInfo>
           </Form>

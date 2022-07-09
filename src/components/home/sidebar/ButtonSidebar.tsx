@@ -9,11 +9,16 @@ interface data {
   onClick?: any;
 }
 
-export default function ButtonSidebar({ delay, Icon, name, onClick }: IButtonSidebar) {
+export default function ButtonSidebar({
+  delay,
+  Icon,
+  name,
+  onClick,
+}: IButtonSidebar) {
   return (
     <button
       onClick={onClick}
-      className=" onClick select-none hover:bg-gradient-info group flex w-10/12 cursor-pointer  flex-wrap gap-2  rounded-lg py-3  font-bold text-gray-500 transition-all duration-200 hover:font-bold hover:shadow-md     "
+      className=" onClick hover:bg-gradient-info  group flex w-10/12 cursor-pointer select-none flex-wrap gap-2  rounded-lg py-3  text-lg text-gray-500    transition-all duration-200 hover:pl-2 hover:font-bold hover:shadow-md dark:text-white     "
     >
       <Icon
         className=" ml-3 w-6     grayscale group-hover:text-white"

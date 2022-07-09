@@ -7,15 +7,15 @@ function CartCategory({ id, text }: { id: number; text: string }) {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className=" h-72  w-full  overflow-hidden "
+      className=" h-72  w-full  overflow-hidden  "
     >
       <Action categoryId={id} />
       <Link
-        className="center cart h-full w-full flex-col gap-2 "
+        className="flex flex-col cart h-full w-full  gap-2   dark:bg-Shark dark:text-white dark:shadow-none  "
         to={`/Categories/${id}`}
       >
         <img
-          className="  relative aspect-square h-4/5   w-11/12 rounded-xl object-cover "
+          className="  relative aspect-square h-4/5 w-full p-2 rounded-3xl object-cover dark:shadow-none "
           src={`https://picsum.photos/id/${id}/400/200`}
           alt="img"
         />

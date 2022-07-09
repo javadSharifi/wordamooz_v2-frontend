@@ -2,6 +2,7 @@ import { authContext } from "context/AuthContext";
 import { Formik } from "formik";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { Button, Form, Input } from "../../components/auth/form";
 import Title from "../../components/auth/Title";
@@ -34,9 +35,9 @@ function Register() {
         mutate(
           { email, name, password, password_confirmation: password },
           {
-            onSuccess() {
+            onSuccess({ data }) {
               toast.success("register is success");
-              setAuth({ ...auth, loading: false });
+              setAuth({ ...auth, loading: true, id: data.data.id });
             },
             onError(e: any) {
               console.log(setErrors(e.response.data.errors));
@@ -53,22 +54,20 @@ function Register() {
       }
     >
       {() => (
-        <Form>
+        <Form className="flex flex-col items-center justify-center">
           <Title />
-          <Input name="name" className=" input-text" type="name" value="name" />
-          <Input
-            name="email"
-            className=" input-text"
-            type="email"
-            value="email"
-          />
+          <Input name="name" className=" w-80" type="name" value="name" />
+          <Input name="email" className=" w-80" type="email" value="email" />
           <Input
             name="password"
-            className=" input-text"
+            className="w-80"
             type="password"
             value="password"
           />
-          <Button>Register</Button>
+          <Button className="px-24 lg:mt-10">Register</Button>
+          <Link to={"/auth"} className="mt-3 text-xl  text-cyan-600">
+            I have account
+          </Link>
         </Form>
       )}
     </Formik>

@@ -11,7 +11,7 @@ function Sidebar() {
       data-aos-duration="1000"
       className=" sticky top-0 hidden h-screen py-4 pl-3 lg:inline-block lg:w-[15%]   xl:w-[13%] "
     >
-      <div className="  relative h-full   rounded-xl bg-slate-100   shadow-lg    ">
+      <div className="  relative h-full rounded-xl  bg-slate-100 shadow-lg  dark:bg-American-Blue  dark:text-white     ">
         <Logo />
         <ListIcon list={listIcon} />
         <Donate />

@@ -41,7 +41,7 @@ function Create() {
       }}
     >
       {() => (
-        <div className="flex w-full justify-center">
+        <div className="flex w-full  justify-center">
           <Form className="flex flex-col items-center gap-3">
             <label className="hidden" ref={closModal} htmlFor="Category" />
             <FieldInput

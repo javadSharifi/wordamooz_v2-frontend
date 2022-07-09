@@ -1,8 +1,6 @@
 import { IUser } from "interfaces";
 import { createContext, useState } from "react";
 
-
-
 export const authContext = createContext<any>(null);
 
 function AuthContext({ children }: { children: React.ReactNode }) {
@@ -11,11 +9,6 @@ function AuthContext({ children }: { children: React.ReactNode }) {
     id: null,
     email: null,
   });
-
-// setAuth((prevState) => ({ ...prevState, loading: true }));
-
-
-
 
   return (
     <authContext.Provider value={[auth, setAuth]}>

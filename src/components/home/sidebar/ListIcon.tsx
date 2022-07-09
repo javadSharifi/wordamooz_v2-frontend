@@ -12,7 +12,7 @@ function ListIcon({ list }: IListIcon<IIcon[]>) {
 
 
   return (
-    <div className="mt-14 flex  w-full flex-col items-center gap-3 ">
+    <div className="mt-14  flex  w-full flex-col items-center gap-3 ">
       <ButtonSidebar
         Icon={HomeIcon}
         delay="400"

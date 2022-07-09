@@ -24,7 +24,7 @@ function FieldInput({
         type={type}
         placeholder={value}
         name={name}
-        className={` input input-bordered w-full  h-14  `}
+        className={` input h-full border-none dark:bg-transparent dark:shadow-none dark:border-2 border-gray-500 input-bordered w-full  min-h-[3.5rem]  `}
       />
       <ErrorMessage name={name} component="p" className="text-red-600" />
     </div>

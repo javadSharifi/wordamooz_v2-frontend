@@ -10,7 +10,7 @@ function CartBtn({ value }: { value: string }) {
       <a
         target="_blank"
         href={`https://getyarn.io/yarn-find?text=${value}`}
-        className="cart-btn"
+        className="cart-btn "
         rel="noreferrer"
       >
         <FilmIcon className="w-3/5 transition-all  duration-200" />

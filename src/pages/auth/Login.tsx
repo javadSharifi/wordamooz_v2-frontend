@@ -7,6 +7,7 @@ import Title from "components/auth/Title";
 import useLogin from "services/auth/login";
 import { authContext } from "context/AuthContext";
 import useMe from "services/auth/user";
+import { Link } from "react-router-dom";
 
 type TData = {
   email: string;
@@ -31,9 +32,9 @@ function Login() {
       validationSchema={validationSchema}
       onSubmit={async (values, { setErrors }) => {
         mutate(values, {
-          onSuccess: ({data}) => {
+          onSuccess: ({ data }) => {
             toast.success("Login Success");
-            setAuth({ ...auth, loading: true , id: data.data.id});
+            setAuth({ ...auth, loading: true, id: data.data.id });
           },
           onError: (e: any) => {
             setErrors(e.response.data.errors);
@@ -48,14 +49,9 @@ function Login() {
       }
     >
       {() => (
-        <Form className="flex flex-col justify-center items-center">
+        <Form className="flex flex-col items-center justify-center">
           <Title />
-          <Input
-            name="email"
-            type="email"
-            value="email"
-            className="w-80"
-          />
+          <Input name="email" type="email" value="email" className="w-80" />
           <Input
             name="password"
             className=" w-80"
@@ -63,6 +59,9 @@ function Login() {
             value="password"
           />
           <Button className="px-24 lg:mt-10">Login</Button>
+          <Link to={"./register"} className="mt-3 text-xl  text-cyan-600">
+            Create an account
+          </Link>
         </Form>
       )}
     </Formik>

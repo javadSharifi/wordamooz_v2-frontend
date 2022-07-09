@@ -31,7 +31,7 @@ function Action({ categoryId }: { categoryId: number }) {
   return (
     <Dropdown>
       <BtnDropdown onClick={() => removePost()}>
-        <TrashIcon className="h-7 w-8 " />
+        <TrashIcon className="h-6 w-8 " />
         <p className="self-center font-bold ">remove</p>
       </BtnDropdown>
     </Dropdown>

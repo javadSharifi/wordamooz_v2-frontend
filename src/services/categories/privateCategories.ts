@@ -1,5 +1,5 @@
 import { authContext } from "context/AuthContext";
-import { IData, ICategory } from "interfaces";
+import { IData, ICategory, IUser } from "interfaces";
 import axios from "libs/axios";
 import { useContext } from "react";
 import { useQuery } from "react-query";
@@ -15,7 +15,7 @@ async function PrivateCategory(id: any) {
 function usePrivateCategories() {
   const [auth] = useContext(authContext); 
 
-  return useQuery("privateCategories", () => PrivateCategory(auth.id));
+  return useQuery(`privateCategories_${auth.id}`, () => PrivateCategory(auth.id));
 }
 
 export default usePrivateCategories;
