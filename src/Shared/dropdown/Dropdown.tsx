@@ -1,4 +1,4 @@
-import { DotsVerticalIcon, } from "@heroicons/react/outline";
+import { DotsVerticalIcon } from "@heroicons/react/outline";
 import React from "react";
 
 function Dropdown({ children }: { children: React.ReactNode }) {
@@ -9,9 +9,8 @@ function Dropdown({ children }: { children: React.ReactNode }) {
       </label>
       <div
         tabIndex={0}
-        className="dropdown-content  rounded-box w-40 bg-white p-2 shadow"
+        className="dropdown-content rounded-box   w-40 bg-white p-2 shadow dark:bg-[#272727db]"
       >
-        
         {children}
       </div>
     </div>

@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 import AuthContext from "context/AuthContext";
 import Starter from "components/Starter";
 import { BrowserRouter } from "react-router-dom";
+import ThemContext from "context/ThemeContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +33,9 @@ root.render(
       <AuthContext>
         <BrowserRouter>
           <Starter>
-            <AppLayouts />
+            <ThemContext>
+              <AppLayouts />
+            </ThemContext>
           </Starter>
         </BrowserRouter>
       </AuthContext>

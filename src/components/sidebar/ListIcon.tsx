@@ -1,11 +1,10 @@
 import React from "react";
-import { IIcon, IListIcon } from "interfaces";
 import ButtonSidebar from "./ButtonSidebar";
 import { CogIcon, HeartIcon, HomeIcon, LogoutIcon } from "@heroicons/react/outline";
 import useLogout from "services/auth/logout";
 import {  useNavigate } from "react-router-dom";
 
-function ListIcon({ list }: IListIcon<IIcon[]>) {
+function ListIcon() {
   const { mutate: logout } = useLogout();
   const navigate= useNavigate()
 

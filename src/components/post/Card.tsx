@@ -1,21 +1,18 @@
-import Dropdown from "shared/dropdown/Dropdown";
 import { ICartPost } from "interfaces";
-import CartBtn from "./Btn";
 import Action from "./Action";
+import PostCardButton from "./PostCardButton";
 
 function CartPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
   return (
-    <div data-aos="zoom-in-up" className="  cart group h-fit  ">
+    <div data-aos="zoom-in-up" className="  group card h-fit  ">
       <img
         className=" relative aspect-square h-52 w-full rounded-3xl  object-cover  object-center p-2    "
         loading="lazy"
         src={`https://picsum.photos/id/${postId}/534/200`}
         alt="avatar"
       />
-
       <Action categoryId={categoryId} postId={postId} />
-
-      <CartBtn value={word} />
+      <PostCardButton word={word} />
 
       <div className=" absolute inline-block translate-x-6 -translate-y-9 cursor-pointer items-center rounded-xl bg-slate-50 px-6 py-3   shadow-md  shadow-slate-200/70 dark:bg-[#272727db]  dark:shadow-md dark:shadow-slate-900 ">
         <h1 className="mx-3 inline-block text-lg font-semibold text-gray-500  dark:text-gray-300 ">

@@ -2,12 +2,7 @@
 import { IButtonSidebar } from "interfaces";
 import React from "react";
 
-interface data {
-  Icon: any;
-  name: string;
-  delay: string;
-  onClick?: any;
-}
+
 
 export default function ButtonSidebar({
   delay,

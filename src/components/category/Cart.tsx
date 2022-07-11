@@ -11,11 +11,11 @@ function CartCategory({ id, text }: { id: number; text: string }) {
     >
       <Action categoryId={id} />
       <Link
-        className="flex flex-col cart h-full w-full  gap-2   dark:bg-Shark dark:text-white dark:shadow-none  "
+        className="card flex h-full w-full flex-col  gap-2   dark:bg-Shark dark:text-white dark:shadow-none  "
         to={`/Categories/${id}`}
       >
         <img
-          className="  relative aspect-square h-4/5 w-full p-2 rounded-3xl object-cover dark:shadow-none "
+          className="  relative aspect-square h-4/5 w-full rounded-3xl object-cover p-2 dark:shadow-none "
           src={`https://picsum.photos/id/${id}/400/200`}
           alt="img"
         />

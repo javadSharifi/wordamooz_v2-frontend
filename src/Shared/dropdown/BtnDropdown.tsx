@@ -9,7 +9,7 @@ function BtnDropdown({
 }) {
   return (
     <button
-      className="   hover:bg-gradient-info flex w-full cursor-pointer 
+      className="  dark:bg-transparent  hover:bg-gradient-info flex w-full cursor-pointer 
         flex-wrap rounded-md border-2 border-gray-300/30 p-2 hover:border-white hover:text-white "
       onClick={onClick}
     >

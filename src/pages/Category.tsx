@@ -1,10 +1,8 @@
 import Modal from "components/Modal";
-import React from "react";
-import { Link } from "react-router-dom";
 import usePrivateCategories from "services/categories/privateCategories";
-import CartCategory from "./Cart";
-import ModalCreate from "../ModalCreate";
-import Create from "./Create";
+import CartCategory from "components/category/card";
+import ModalCreate from "components/ModalCreate";
+import Create from "components/category/Create";
 
 function Category() {
   const { data, isLoading } = usePrivateCategories();
@@ -24,10 +22,8 @@ function Category() {
           <Create />
         </ModalCreate>
       </Modal>
-    
-      
+
       {result}
-      
     </>
   );
 }

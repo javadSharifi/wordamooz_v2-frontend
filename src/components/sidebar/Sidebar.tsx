@@ -1,6 +1,5 @@
 import Logo from "./Logo";
 
-import { listIcon } from "./Icon";
 import ListIcon from "./ListIcon";
 import Donate from "./Donate";
 
@@ -13,7 +12,7 @@ function Sidebar() {
     >
       <div className="  relative h-full rounded-xl  bg-slate-100 shadow-lg  dark:bg-American-Blue  dark:text-white     ">
         <Logo />
-        <ListIcon list={listIcon} />
+        <ListIcon/>
         <Donate />
       </div>
     </div>
