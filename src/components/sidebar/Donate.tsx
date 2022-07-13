@@ -1,5 +1,5 @@
-import React from "react";
-import Idonate from "assets/img/donate.png";
+import React from 'react';
+import Idonate from 'assets/img/donate.png';
 
 function Donate() {
   return (

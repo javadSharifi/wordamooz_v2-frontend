@@ -1,12 +1,12 @@
-import { ICartPost } from "interfaces";
-import Action from "./Action";
-import PostCardButton from "./PostCardButton";
+import { ICartPost } from 'interfaces';
+import Action from './Action';
+import PostCardButton from './PostCardButton';
 
-function CartPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
+function CardPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
   return (
-    <div data-aos="zoom-in-up" className="  group card h-fit  ">
+    <div data-aos="zoom-in-up" className="  group  card relative h-fit  ">
       <img
-        className=" relative aspect-square h-52 w-full rounded-3xl  object-cover  object-center p-2    "
+        className=" aspect-square  h-52 w-full select-none rounded-3xl  object-cover  object-center p-2    "
         loading="lazy"
         src={`https://picsum.photos/id/${postId}/534/200`}
         alt="avatar"
@@ -14,7 +14,7 @@ function CartPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
       <Action categoryId={categoryId} postId={postId} />
       <PostCardButton word={word} />
 
-      <div className=" absolute inline-block translate-x-6 -translate-y-9 cursor-pointer items-center rounded-xl bg-slate-50 px-6 py-3   shadow-md  shadow-slate-200/70 dark:bg-[#272727db]  dark:shadow-md dark:shadow-slate-900 ">
+      <div className=" absolute top-1/2 left-4 inline-block  cursor-pointer items-center rounded-xl bg-slate-50 px-6 py-3   shadow-md  shadow-slate-200/70 dark:bg-[#272727db]  dark:shadow-md dark:shadow-slate-900 ">
         <h1 className="mx-3 inline-block text-lg font-semibold text-gray-500  dark:text-gray-300 ">
           {word}
         </h1>
@@ -24,7 +24,7 @@ function CartPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
         <p className="py-2 text-lg selection:bg-sky-300 selection:text-white">
           {meaning}
         </p>
-        <p className=" whitespace-pre-wrap break-words   py-2 selection:bg-sky-300 selection:text-white">
+        <p className=" whitespace-pre-wrap break-words py-2   selection:bg-sky-300 selection:text-white dark:text-white">
           {body}
         </p>
       </div>
@@ -32,4 +32,4 @@ function CartPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
   );
 }
 
-export default CartPost;
+export default CardPost;

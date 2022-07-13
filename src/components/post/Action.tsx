@@ -1,10 +1,10 @@
-import { TrashIcon } from "@heroicons/react/outline";
-import React from "react";
-import toast from "react-hot-toast";
-import { useQueryClient } from "react-query";
-import useRemovePost from "services/posts/removePost";
-import BtnDropdown from "shared/dropdown/BtnDropdown";
-import Dropdown from "shared/dropdown";
+import { TrashIcon } from '@heroicons/react/outline';
+import React from 'react';
+import toast from 'react-hot-toast';
+import { useQueryClient } from 'react-query';
+import useRemovePost from 'services/posts/removePost';
+import BtnDropdown from 'shared/dropdown/BtnDropdown';
+import Dropdown from 'shared/dropdown';
 
 function Action({
   postId,
@@ -18,14 +18,14 @@ function Action({
   const { mutate } = useRemovePost();
 
   const removePost = () => {
-    toast.loading("removing...", {
+    toast.loading('removing...', {
       duration: 1000,
     });
     mutate(
       { categoryId, postId },
       {
         onSuccess() {
-          toast.success("remove is success");
+          toast.success('remove is success');
           queryClient.invalidateQueries([`posts_${categoryId}`]);
         },
         onError(e: any) {

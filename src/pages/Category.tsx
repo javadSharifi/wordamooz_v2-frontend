@@ -1,8 +1,8 @@
-import Modal from "components/Modal";
-import usePrivateCategories from "services/categories/privateCategories";
-import CartCategory from "components/category/card";
-import ModalCreate from "components/ModalCreate";
-import Create from "components/category/Create";
+import Modal from 'components/Modal';
+import usePrivateCategories from 'services/categories/privateCategories';
+import ModalCreate from 'components/ModalCreate';
+import Create from 'components/category/Create';
+import CardCategory from 'components/category/Card';
 
 function Category() {
   const { data, isLoading } = usePrivateCategories();
@@ -11,7 +11,7 @@ function Category() {
     <div>Loading...</div>
   ) : (
     data?.data.data.map(({ id, name }) => (
-      <CartCategory key={id} id={id} text={name} />
+      <CardCategory key={id} id={id} text={name} />
     ))
   );
 

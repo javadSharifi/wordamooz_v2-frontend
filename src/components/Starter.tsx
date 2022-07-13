@@ -1,7 +1,7 @@
-import { authContext } from "context/AuthContext";
-import React, { useContext } from "react";
-import useMe from "services/auth/user";
-import Loading from "./Loading";
+import { authContext } from 'context/AuthContext';
+import React, { useContext } from 'react';
+import useMe from 'services/auth/user';
+import Loading from './Loading';
 
 type StarterProps = {
   children: any;

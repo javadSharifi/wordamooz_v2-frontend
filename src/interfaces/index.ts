@@ -57,7 +57,6 @@ export type IChildren = {
   children?: React.ReactNode;
 };
 
-
 export interface ICartPost {
   id: number;
   body: string;
@@ -75,7 +74,7 @@ export interface IIcon {
 export interface IListIcon<type> {
   list: type;
 }
- export interface IButtonSidebar {
+export interface IButtonSidebar {
   Icon?: any;
   name?: string;
   delay?: string;

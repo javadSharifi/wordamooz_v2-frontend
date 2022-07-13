@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 type ImageProps = {
   src: string;
   alt: string;
 };
-
 
 function Image({ src, alt }: ImageProps) {
   return (

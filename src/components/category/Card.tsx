@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Action from "./Action";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Action from './Action';
 
-function CartCategory({ id, text }: { id: number; text: string }) {
+function CardCategory({ id, text }: { id: number; text: string }) {
   return (
     <div
       data-aos="fade-up"
@@ -26,4 +26,4 @@ function CartCategory({ id, text }: { id: number; text: string }) {
   );
 }
 
-export default CartCategory;
+export default CardCategory;

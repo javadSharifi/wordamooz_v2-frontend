@@ -1,5 +1,5 @@
-import { IUser } from "interfaces";
-import { createContext, useState } from "react";
+import { IUser } from 'interfaces';
+import { createContext, useState } from 'react';
 
 export const authContext = createContext<any>(null);
 

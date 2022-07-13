@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 type ModalCreateProps = {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ function ModalCreate({ children }: ModalCreateProps) {
   return (
     <label
       htmlFor=""
-      className="flex min-h-[25rem] w-[25rem] lg:w-[30rem] flex-col items-center gap-3 rounded-2xl bg-slate-50 p-3 dark:bg-[#1E293B]"
+      className="flex min-h-[25rem] w-[25rem] flex-col items-center gap-3 rounded-2xl bg-slate-50 p-3 dark:bg-[#1E293B] lg:w-[30rem]"
     >
       <div
         onClick={() => setId(generateRandomNumber())}

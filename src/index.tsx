@@ -1,17 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import AppLayouts from "./layouts/AppLayouts";
-import reportWebVitals from "./reportWebVitals";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { Toaster } from "react-hot-toast";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import AuthContext from "context/AuthContext";
-import Starter from "components/Starter";
-import { BrowserRouter } from "react-router-dom";
-import ThemContext from "context/ThemeContext";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Toaster } from 'react-hot-toast';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import AuthContext from 'context/AuthContext';
+import Starter from 'components/Starter';
+import { BrowserRouter } from 'react-router-dom';
+import App from 'App';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,7 +22,7 @@ const queryClient = new QueryClient({
 });
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 Aos.init();
 
@@ -33,9 +32,7 @@ root.render(
       <AuthContext>
         <BrowserRouter>
           <Starter>
-            <ThemContext>
-              <AppLayouts />
-            </ThemContext>
+            <App />
           </Starter>
         </BrowserRouter>
       </AuthContext>

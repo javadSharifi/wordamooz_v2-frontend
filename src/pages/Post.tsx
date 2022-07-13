@@ -1,10 +1,11 @@
-import Modal from "components/Modal";
-import React from "react";
-import { useParams } from "react-router-dom";
-import usePrivatePots from "services/posts/privatePost";
-import CartPost from "components/post/card";
-import ModalCreate from "components/ModalCreate";
-import CreatePost from "components/post/Create";
+import Modal from 'components/Modal';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import usePrivatePots from 'services/posts/privatePost';
+
+import ModalCreate from 'components/ModalCreate';
+import CreatePost from 'components/post/Create';
+import CardPost from 'components/post/Card';
 
 function Post() {
   const { data, isLoading } = usePrivatePots();
@@ -14,7 +15,7 @@ function Post() {
     <div>Loading...</div>
   ) : (
     data?.data.data.map(({ id, body, meaning, word, category_id }) => (
-      <CartPost
+      <CardPost
         body={body}
         categoryId={category_id}
         id={id}

@@ -1,8 +1,8 @@
-import { useMutation } from "react-query";
-import sanctum from "./sanctum";
+import { useMutation } from 'react-query';
+import sanctum from './sanctum';
 
-import axios from "../../libs/axios";
-import { IAuthUser, IResource } from "../../interfaces";
+import axios from '../../libs/axios';
+import { IAuthUser, IResource } from '../../interfaces';
 
 type TData = {
   email: string;
@@ -11,7 +11,7 @@ type TData = {
 
 const login = async (data: TData) => {
   await sanctum();
-  const result = await axios.post<IResource<IAuthUser>>("/auth/login", data);
+  const result = await axios.post<IResource<IAuthUser>>('/auth/login', data);
   return result;
 };
 

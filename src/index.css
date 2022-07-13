@@ -77,8 +77,8 @@
         dark:shadow-none dark:hover:border-cyan-500/30;
   }
   .postcard‌‌-Button {
-    @apply absolute right-[20%] top-10 z-50  flex  -translate-y-7  -translate-x-8 gap-4 opacity-0
-     transition-all  duration-500 group-hover:opacity-80 sm:-translate-x-3 md:right-0 md:top-auto
-      md:-translate-x-8 md:group-hover:opacity-100;
+    @apply right-5  z-50  flex gap-4
+     opacity-0  transition-all duration-500 group-hover:opacity-80 sm:-translate-x-3 md:top-2/4 md:translate-y-3 
+      md:group-hover:opacity-100;
   }
 }

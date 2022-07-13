@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import LiteLogo from "assets/svg/logoBig.svg";
-import DarkLogo from "assets/svg/darkLogo.svg";
-import { themeContext } from "context/ThemeContext";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import LiteLogo from 'assets/svg/logoBig.svg';
+import DarkLogo from 'assets/svg/darkLogo.svg';
+import { themeContext } from 'context/ThemeContext';
 
 function Logo() {
-    const { theme } = useContext(themeContext);
+  const { theme } = useContext(themeContext);
 
   return (
     <Link to="/">
@@ -16,7 +16,7 @@ function Logo() {
         className="center    w-full flex-col pt-14  "
       >
         <img
-          src={theme === "light" ? LiteLogo : DarkLogo}
+          src={theme === 'light' ? LiteLogo : DarkLogo}
           alt="logo"
           className="h-14 "
         />

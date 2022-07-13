@@ -1,13 +1,12 @@
-import { Formik } from "formik";
-import React, { useContext } from "react";
-import toast from "react-hot-toast";
-import * as Yup from "yup";
-import { Button, Form, Input } from "../../components/auth/form";
-import Title from "components/auth/Title";
-import useLogin from "services/auth/login";
-import { authContext } from "context/AuthContext";
-import useMe from "services/auth/user";
-import { Link } from "react-router-dom";
+import { Formik } from 'formik';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import * as Yup from 'yup';
+import { Button, Form, Input } from '../../components/auth/form';
+import Title from 'components/auth/Title';
+import useLogin from 'services/auth/login';
+import { authContext } from 'context/AuthContext';
+import { Link } from 'react-router-dom';
 
 type TData = {
   email: string;
@@ -16,15 +15,15 @@ type TData = {
 
 function Login() {
   const { mutate } = useLogin();
-    const [auth, setAuth] = useContext(authContext);
+  const [auth, setAuth] = useContext(authContext);
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .email("Invalid email address")
-      .required("email is required"),
+      .email('Invalid email address')
+      .required('email is required'),
     password: Yup.string()
-      .required("password is required")
-      .min(6, "password must be at least 6 characters")
-      .max(20, "password must be less than 20 characters"),
+      .required('password is required')
+      .min(6, 'password must be at least 6 characters')
+      .max(20, 'password must be less than 20 characters'),
   });
 
   return (
@@ -33,7 +32,7 @@ function Login() {
       onSubmit={async (values, { setErrors }) => {
         mutate(values, {
           onSuccess: ({ data }) => {
-            toast.success("Login Success");
+            toast.success('Login Success');
             setAuth({ ...auth, loading: true, id: data.data.id });
           },
           onError: (e: any) => {
@@ -43,8 +42,8 @@ function Login() {
       }}
       initialValues={
         {
-          email: "",
-          password: "",
+          email: '',
+          password: '',
         } as TData
       }
     >
@@ -59,7 +58,7 @@ function Login() {
             value="password"
           />
           <Button className="px-24 lg:mt-10">Login</Button>
-          <Link to={"./register"} className="mt-3 text-xl  text-cyan-600">
+          <Link to={'./register'} className="mt-3 text-xl  text-cyan-600">
             Create an account
           </Link>
         </Form>

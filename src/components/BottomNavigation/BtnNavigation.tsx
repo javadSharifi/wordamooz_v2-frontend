@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function BtnNavigation({Icon ,onClick}: { Icon:any ,onClick?:any}) {
+function BtnNavigation({ Icon, onClick }: { Icon: any; onClick?: any }) {
   return (
     <button onClick={onClick} className="BtnNavigation ">
       <Icon />
@@ -8,4 +8,4 @@ function BtnNavigation({Icon ,onClick}: { Icon:any ,onClick?:any}) {
   );
 }
 
-export default BtnNavigation
+export default BtnNavigation;

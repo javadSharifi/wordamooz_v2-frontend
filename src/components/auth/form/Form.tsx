@@ -1,5 +1,5 @@
-import React from "react";
-import { Form as FormikForm } from "formik";
+import React from 'react';
+import { Form as FormikForm } from 'formik';
 const Form = ({
   children,
   className,
@@ -8,7 +8,9 @@ const Form = ({
   className?: string;
 }) => {
   return (
-    <FormikForm className={`   h-full w-full    gap-x-2 ${className} `}>{children}</FormikForm>
+    <FormikForm className={`   h-full w-full    gap-x-2 ${className} `}>
+      {children}
+    </FormikForm>
   );
 };
 

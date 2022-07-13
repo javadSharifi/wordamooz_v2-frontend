@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
-import { IButtonSidebar } from "interfaces";
-import React from "react";
-
-
+import { IButtonSidebar } from 'interfaces';
+import React from 'react';
 
 export default function ButtonSidebar({
   delay,
@@ -18,6 +16,7 @@ export default function ButtonSidebar({
       <Icon
         className=" ml-3 w-6     grayscale group-hover:text-white"
         data-aos="zoom-in"
+        data-aos-once="true"
         data-aos-delay={delay}
       />
       <h1

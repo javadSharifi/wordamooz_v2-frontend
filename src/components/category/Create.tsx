@@ -1,12 +1,12 @@
-import * as Yup from "yup";
-import { Formik } from "formik";
-import { Form } from "components/auth/form";
-import FieldInput from "shared/Input";
-import ButtonInfo from "shared/ButtonInfo";
-import { useRef } from "react";
-import useCategories from "services/categories/newCategories";
-import toast from "react-hot-toast";
-import { useQueryClient } from "react-query";
+import * as Yup from 'yup';
+import { Formik } from 'formik';
+import { Form } from 'components/auth/form';
+import FieldInput from 'shared/Input';
+import ButtonInfo from 'shared/ButtonInfo';
+import { useRef } from 'react';
+import useCategories from 'services/categories/newCategories';
+import toast from 'react-hot-toast';
+import { useQueryClient } from 'react-query';
 
 function Create() {
   const closModal = useRef<any>();
@@ -14,7 +14,7 @@ function Create() {
   const queryClient = useQueryClient();
 
   const validationSchema = Yup.object().shape({
-    category: Yup.string().required("category is required"),
+    category: Yup.string().required('category is required'),
   });
 
   return (
@@ -24,11 +24,14 @@ function Create() {
         mutate(
           { name: category, is_public: false },
           {
-            onSuccess() {
-              toast.success("create is success");
+            onSuccess(res) {
+              console.log();
+              toast.success('create is success');
               actions.resetForm();
               closModal.current.click();
-              queryClient.invalidateQueries(["privateCategories"]);
+              queryClient.invalidateQueries([
+                `privateCategories_${res.data.data.user_id}`,
+              ]);
             },
             onError(e: any) {
               console.log(actions.setErrors(e.response.data.errors));
@@ -37,7 +40,7 @@ function Create() {
         );
       }}
       initialValues={{
-        category: "",
+        category: '',
       }}
     >
       {() => (

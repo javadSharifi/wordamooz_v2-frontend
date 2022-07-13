@@ -1,5 +1,5 @@
-import React from "react";
-import { ErrorMessage, Field } from "formik";
+import React from 'react';
+import { ErrorMessage, Field } from 'formik';
 
 function FieldInput({
   value,
@@ -24,7 +24,7 @@ function FieldInput({
         type={type}
         placeholder={value}
         name={name}
-        className={` input h-full border-none dark:bg-transparent dark:shadow-none dark:border-2 border-gray-500 input-bordered w-full  min-h-[3.5rem]  `}
+        className={` input  input-bordered h-14 min-h-[3.5rem] w-full border-transparent dark:border-2 dark:border-gray-500  dark:bg-transparent dark:shadow-none  `}
       />
       <ErrorMessage name={name} component="p" className="text-red-600" />
     </div>

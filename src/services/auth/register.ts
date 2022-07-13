@@ -1,4 +1,3 @@
-
 import { useMutation } from 'react-query';
 import sanctum from './sanctum';
 
