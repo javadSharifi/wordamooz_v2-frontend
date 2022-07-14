@@ -22,6 +22,8 @@ export default function ButtonSidebar({
       <h1
         className="group-hover:text-white"
         data-aos="zoom-in"
+        
+        data-aos-once="true"
         data-aos-delay={delay}
       >
         {name}

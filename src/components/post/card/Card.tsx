@@ -4,7 +4,7 @@ import PostCardButton from './PostCardButton';
 
 function CardPost({ id: postId, body, word, meaning, categoryId }: ICartPost) {
   return (
-    <div data-aos="zoom-in-up" className="  group  card relative h-fit  ">
+    <div  data-aos="zoom-in-up" className="  group  card relative h-fit  ">
       <img
         className=" aspect-square  h-52 w-full select-none rounded-3xl  object-cover  object-center p-2    "
         loading="lazy"

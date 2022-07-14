@@ -10,6 +10,7 @@ function Logo() {
   return (
     <Link to="/">
       <div
+        data-aos-once="true"
         data-aos="zoom-in"
         data-aos-delay="200"
         data-aos-duration="1000"

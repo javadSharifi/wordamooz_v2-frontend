@@ -5,9 +5,10 @@ type MainProps = {
 };
 
 function Main({ children }: MainProps) {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <main className="` mb-12 mt-3  grid min-h-[86.5vh]  w-full gap-6 rounded-xl bg-slate-100 p-6 shadow-sm dark:bg-American-Blue sm:mb-4  sm:grid-cols-2 lg:grid-cols-3  ">
-      {children}
+    <main   className="` mb-12 mt-3  grid min-h-[86.5vh]  w-full gap-6 rounded-xl bg-slate-100 p-6 shadow-sm dark:bg-American-Blue sm:mb-4  sm:grid-cols-2 lg:grid-cols-3  ">
+      {children  }
     </main>
   );
 }
